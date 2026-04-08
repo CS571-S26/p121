@@ -123,10 +123,10 @@ button {
   background-color: #ffffff !important;
 }
 
-/* Keep text dark inside white list group rows. */
+/* Preset/task rows live on dark cards, so keep their text light. */
 .card .list-group-item,
 .card .list-group-item * {
-  color: #0b1220 !important;
+  color: #edf2ff !important;
 }
 
 .form-control::placeholder,
