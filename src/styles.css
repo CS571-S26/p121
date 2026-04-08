@@ -6,6 +6,15 @@
   --accent: #4f8cff;
   --danger: #ff5a6a;
   --border: rgba(232, 238, 252, 0.14);
+  --bs-body-bg: #0b1220;
+  --bs-body-color: #e8eefc;
+  --bs-body-color-rgb: 232, 238, 252;
+  --bs-secondary-color: #d2dcf7;
+  --bs-secondary-color-rgb: 210, 220, 247;
+  --bs-tertiary-color: #dbe4fb;
+  --bs-tertiary-color-rgb: 219, 228, 251;
+  --bs-heading-color: #e8eefc;
+  --bs-emphasis-color: #f4f7ff;
 }
 
 html,
@@ -41,6 +50,9 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 16px;
+  color: var(--text) !important;
+  --bs-card-bg: var(--panel);
+  --bs-card-color: var(--text);
 }
 
 .row {
@@ -96,5 +108,41 @@ button {
 .card .text-muted,
 .card .card-subtitle {
   color: #dbe4fb !important;
+}
+
+/* Hard override: all card content uses high-contrast light text. */
+.card,
+.card * {
+  color: #edf2ff !important;
+}
+
+/* Keep text dark on white form controls. */
+.card .form-control,
+.card .form-select {
+  color: #0b1220 !important;
+  background-color: #ffffff !important;
+}
+
+/* Keep text dark inside white list group rows. */
+.card .list-group-item,
+.card .list-group-item * {
+  color: #0b1220 !important;
+}
+
+.form-control::placeholder,
+.form-select::placeholder {
+  color: #cfd8f6 !important;
+}
+
+.card-title,
+.card-text,
+.card-body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
 }
 
