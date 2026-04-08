@@ -1,40 +1,35 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 export default function NavBar() {
   return (
-    <nav aria-label="Primary navigation">
-      <div className="row" style={{ alignItems: "center" }}>
-        <div className="col" style={{ flex: "0 0 auto" }}>
-          <strong>Stoody</strong>
-        </div>
-        <div className="col" style={{ flex: "1 1 auto" }}>
-          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <NavLink to="/start" className={({ isActive }) => (isActive ? "btn btnPrimary" : "btn")}>
+    <Navbar bg="dark" data-bs-theme="dark" expand="md" rounded="true">
+      <Container>
+        <Navbar.Brand as={NavLink} to="/start">
+          Stoody
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="primary-nav" />
+        <Navbar.Collapse id="primary-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={NavLink} to="/start">
               Start Session
-            </NavLink>
-            <NavLink
-              to="/history"
-              className={({ isActive }) => (isActive ? "btn btnPrimary" : "btn")}
-            >
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/history">
               History
-            </NavLink>
-            <NavLink
-              to="/presets"
-              className={({ isActive }) => (isActive ? "btn btnPrimary" : "btn")}
-            >
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/presets">
               Presets
-            </NavLink>
-            <NavLink
-              to="/help"
-              className={({ isActive }) => (isActive ? "btn btnPrimary" : "btn")}
-            >
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/help">
               Help
-            </NavLink>
-          </div>
-        </div>
-      </div>
-    </nav>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
