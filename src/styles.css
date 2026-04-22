@@ -1,20 +1,22 @@
 :root {
-  --bg: #0b1220;
-  --panel: #111b2e;
-  --text: #e8eefc;
-  --muted: #c8d5f5;
-  --accent: #4f8cff;
-  --danger: #ff5a6a;
-  --border: rgba(232, 238, 252, 0.14);
-  --bs-body-bg: #0b1220;
-  --bs-body-color: #e8eefc;
-  --bs-body-color-rgb: 232, 238, 252;
-  --bs-secondary-color: #d2dcf7;
-  --bs-secondary-color-rgb: 210, 220, 247;
-  --bs-tertiary-color: #dbe4fb;
-  --bs-tertiary-color-rgb: 219, 228, 251;
-  --bs-heading-color: #e8eefc;
-  --bs-emphasis-color: #f4f7ff;
+  --bg: #1f1f1f;
+  --panel: #2b2b2b;
+  --text: #f9f9f9;
+  --muted: #ead1d1;
+  --accent: #c5050c;
+  --danger: #c5050c;
+  --border: rgba(197, 5, 12, 0.45);
+  --bs-body-bg: #1f1f1f;
+  --bs-body-color: #f9f9f9;
+  --bs-body-color-rgb: 249, 249, 249;
+  --bs-secondary-color: #ead1d1;
+  --bs-secondary-color-rgb: 234, 209, 209;
+  --bs-tertiary-color: #f2dddd;
+  --bs-tertiary-color-rgb: 242, 221, 221;
+  --bs-heading-color: #ffffff;
+  --bs-emphasis-color: #ffffff;
+  --bs-danger: #c5050c;
+  --bs-danger-rgb: 197, 5, 12;
 }
 
 html,
@@ -53,6 +55,23 @@ a:hover {
   color: var(--text) !important;
   --bs-card-bg: var(--panel);
   --bs-card-color: var(--text);
+}
+
+.stoody-navbar {
+  background: linear-gradient(90deg, #9b0000, #c5050c);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.stoody-navbar .navbar-brand,
+.stoody-navbar .nav-link {
+  color: #ffffff !important;
+}
+
+.stoody-navbar .nav-link.active {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
 }
 
 .row {

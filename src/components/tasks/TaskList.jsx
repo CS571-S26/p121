@@ -38,7 +38,9 @@ export default function TaskList() {
             value={newTask}
             onChange={(event) => setNewTask(event.target.value)}
           />
-          <Button onClick={addTask}>Add</Button>
+          <Button variant="danger" onClick={addTask}>
+            Add
+          </Button>
         </Stack>
         <ListGroup>
           {tasks.map((task) => (

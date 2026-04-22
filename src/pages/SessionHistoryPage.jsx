@@ -1,15 +1,25 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
 import StatCard from "../components/common/StatCard.jsx";
 
+const SESSION_HISTORY_KEY = "stoodySessionHistory";
+
 export default function SessionHistoryPage() {
-  const sessions = [
+  const [sessions, setSessions] = useState([
     { id: 1, date: "2026-03-15", focus: 90, completed: 5, distraction: "Phone" },
     { id: 2, date: "2026-03-16", focus: 120, completed: 6, distraction: "Noise" },
     { id: 3, date: "2026-03-17", focus: 60, completed: 3, distraction: "Social media" }
-  ];
+  ]);
+
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem(SESSION_HISTORY_KEY) || "[]");
+    if (saved.length) {
+      setSessions(saved);
+    }
+  }, []);
 
   const totalFocus = sessions.reduce((sum, session) => sum + session.focus, 0);
 

@@ -6,7 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 export default function NavBar() {
   return (
-    <Navbar bg="dark" data-bs-theme="dark" expand="md" rounded="true">
+    <Navbar data-bs-theme="dark" expand="md" className="stoody-navbar">
       <Container>
         <Navbar.Brand as={NavLink} to="/start">
           Stoody

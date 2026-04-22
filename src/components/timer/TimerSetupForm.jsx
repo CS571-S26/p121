@@ -56,7 +56,9 @@ export default function TimerSetupForm({ form, onChange, onStart }) {
             </Col>
           </Row>
           <p className="text-muted mt-3 mb-2">Estimated total: {totalMinutes} minutes</p>
-          <Button type="submit">Start Session</Button>
+          <Button variant="danger" type="submit">
+            Start Session
+          </Button>
         </Form>
       </Card.Body>
     </Card>

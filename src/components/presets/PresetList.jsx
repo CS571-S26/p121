@@ -17,7 +17,7 @@ export default function PresetList({ presets }) {
                   {preset.workMinutes}m work / {preset.breakMinutes}m break / {preset.cycles} cycles
                 </div>
               </div>
-              <Badge bg="secondary">Ready</Badge>
+              <Badge bg="danger">Ready</Badge>
             </ListGroup.Item>
           ))}
         </ListGroup>

@@ -40,7 +40,9 @@ export default function ReflectionForm() {
               placeholder="Write a short reflection..."
             />
           </Form.Group>
-          <Button type="submit">Save Reflection</Button>
+          <Button variant="danger" type="submit">
+            Save Reflection
+          </Button>
           {saved ? <p className="text-success mt-3 mb-0">Reflection saved (demo).</p> : null}
         </Form>
       </Card.Body>
