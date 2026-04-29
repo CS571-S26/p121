@@ -11,6 +11,7 @@ import ReflectionForm from "../components/reflection/ReflectionForm.jsx";
 import StatCard from "../components/common/StatCard.jsx";
 
 const SESSION_HISTORY_KEY = "stoodySessionHistory";
+const PRESET_STORAGE_KEY = "stoodyPendingPreset";
 
 export default function StartSessionPage() {
   const [form, setForm] = useState({
@@ -30,6 +31,30 @@ export default function StartSessionPage() {
   const [focusSecondsCompleted, setFocusSecondsCompleted] = useState(0);
   const [notice, setNotice] = useState("");
   const previousSecondsLeftRef = useRef(session.secondsLeft);
+
+  useEffect(() => {
+    const raw = localStorage.getItem(PRESET_STORAGE_KEY);
+    if (!raw) return;
+    try {
+      const preset = JSON.parse(raw);
+      if (
+        preset &&
+        typeof preset.workMinutes === "number" &&
+        typeof preset.breakMinutes === "number" &&
+        typeof preset.cycles === "number"
+      ) {
+        setForm({
+          workMinutes: Math.max(1, preset.workMinutes),
+          breakMinutes: Math.max(1, preset.breakMinutes),
+          cycles: Math.max(1, preset.cycles)
+        });
+        setNotice("Preset values loaded into session setup.");
+      }
+    } catch {
+      // ignore invalid preset payloads
+    }
+    localStorage.removeItem(PRESET_STORAGE_KEY);
+  }, []);
 
   const totalMinutes = useMemo(
     () => form.cycles * (form.workMinutes + form.breakMinutes),

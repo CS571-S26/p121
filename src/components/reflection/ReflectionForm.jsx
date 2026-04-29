@@ -13,7 +13,9 @@ export default function ReflectionForm() {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>Quick Reflection</Card.Title>
+        <Card.Title as="h2" className="h5">
+          Quick Reflection
+        </Card.Title>
         <Form
           onSubmit={(event) => {
             event.preventDefault();

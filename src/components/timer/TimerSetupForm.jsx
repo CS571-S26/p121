@@ -13,7 +13,9 @@ export default function TimerSetupForm({ form, onChange, onStart }) {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>Session Setup</Card.Title>
+        <Card.Title as="h2" className="h5">
+          Session Setup
+        </Card.Title>
         <Form
           onSubmit={(event) => {
             event.preventDefault();

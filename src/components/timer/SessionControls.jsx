@@ -7,15 +7,17 @@ export default function SessionControls({ isActive, isPaused, onPauseResume, onS
   return (
     <Card>
       <Card.Body>
-        <Card.Title>Session Controls</Card.Title>
+        <Card.Title as="h2" className="h5">
+          Session Controls
+        </Card.Title>
         <ButtonGroup aria-label="Session controls">
-          <Button variant="danger" disabled={!isActive} onClick={onPauseResume}>
+          <Button type="button" variant="danger" disabled={!isActive} onClick={onPauseResume}>
             {isPaused ? "Resume" : "Pause"}
           </Button>
-          <Button variant="outline-light" disabled={!isActive} onClick={onSkip}>
+          <Button type="button" variant="outline-light" disabled={!isActive} onClick={onSkip}>
             Skip Step
           </Button>
-          <Button variant="outline-warning" disabled={!isActive} onClick={onEnd}>
+          <Button type="button" variant="outline-warning" disabled={!isActive} onClick={onEnd}>
             End Early
           </Button>
         </ButtonGroup>

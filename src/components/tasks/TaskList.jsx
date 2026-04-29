@@ -30,18 +30,28 @@ export default function TaskList() {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>Session Tasks</Card.Title>
-        <Stack direction="horizontal" gap={2} className="mb-3">
-          <Form.Control
-            aria-label="New task"
-            placeholder="Add a task for this study session"
-            value={newTask}
-            onChange={(event) => setNewTask(event.target.value)}
-          />
-          <Button variant="danger" onClick={addTask}>
-            Add
-          </Button>
-        </Stack>
+        <Card.Title as="h2" className="h5">
+          Session Tasks
+        </Card.Title>
+        <Form.Group className="mb-3" controlId="sessionNewTask">
+          <Form.Label>New task</Form.Label>
+          <Stack direction="horizontal" gap={2}>
+            <Form.Control
+              placeholder="Add a task for this study session"
+              value={newTask}
+              onChange={(event) => setNewTask(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  addTask();
+                }
+              }}
+            />
+            <Button variant="danger" type="button" onClick={addTask}>
+              Add
+            </Button>
+          </Stack>
+        </Form.Group>
         <ListGroup>
           {tasks.map((task) => (
             <ListGroup.Item key={task.id} className="d-flex justify-content-between align-items-center">

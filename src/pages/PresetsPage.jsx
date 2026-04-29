@@ -22,7 +22,9 @@ export default function PresetsPage() {
         <Col lg={4}>
           <Card>
             <Card.Body>
-              <Card.Title>Next Step</Card.Title>
+              <Card.Title as="h2" className="h5">
+                Next Step
+              </Card.Title>
               <Card.Text className="mb-0">
                 In a later milestone, users will create, edit, and delete presets with localStorage.
               </Card.Text>

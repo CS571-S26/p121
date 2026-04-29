@@ -11,7 +11,7 @@ export default function NavBar() {
         <Navbar.Brand as={NavLink} to="/start">
           Stoody
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="primary-nav" />
+        <Navbar.Toggle aria-controls="primary-nav" aria-label="Toggle primary navigation" />
         <Navbar.Collapse id="primary-nav">
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/start">

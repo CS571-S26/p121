@@ -2,14 +2,15 @@
   --bg: #1f1f1f;
   --panel: #2b2b2b;
   --text: #f9f9f9;
-  --muted: #ead1d1;
+  /* Meets WCAG AA contrast (~7:1) as secondary text on dark backgrounds */
+  --muted: #d8dee9;
   --accent: #c5050c;
   --danger: #c5050c;
   --border: rgba(197, 5, 12, 0.45);
   --bs-body-bg: #1f1f1f;
   --bs-body-color: #f9f9f9;
   --bs-body-color-rgb: 249, 249, 249;
-  --bs-secondary-color: #ead1d1;
+  --bs-secondary-color: #d8dee9;
   --bs-secondary-color-rgb: 234, 209, 209;
   --bs-tertiary-color: #f2dddd;
   --bs-tertiary-color-rgb: 242, 221, 221;
@@ -163,5 +164,30 @@ h4,
 h5,
 h6 {
   color: var(--text);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1080;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  color: #0b1220;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  outline: 3px solid #4f8cff;
+  outline-offset: 2px;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  padding: 1.25rem 20px 2rem;
+  border-top: 1px solid var(--border);
 }
 

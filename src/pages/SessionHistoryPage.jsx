@@ -22,11 +22,14 @@ export default function SessionHistoryPage() {
   }, []);
 
   const totalFocus = sessions.reduce((sum, session) => sum + session.focus, 0);
+  const sessionCount = sessions.length;
+  const avgPerSession =
+    sessionCount > 0 ? Math.round(totalFocus / sessionCount) : 0;
 
   return (
     <section aria-label="Session history">
       <h1 className="mb-3">Past Session History</h1>
-      <p className="text-muted">Session summaries are now shown in a simple table layout.</p>
+      <p className="text-muted">Session summaries are shown in a simple table layout.</p>
       <Row className="g-3 mb-3">
         <Col md={4}>
           <StatCard label="Sessions" value={sessions.length} hint="Demo records" />
@@ -35,17 +38,21 @@ export default function SessionHistoryPage() {
           <StatCard label="Focus Time" value={`${totalFocus} min`} hint="Total accumulated" />
         </Col>
         <Col md={4}>
-          <StatCard label="Avg/Session" value={`${Math.round(totalFocus / sessions.length)} min`} />
+          <StatCard label="Avg/Session" value={`${avgPerSession} min`} />
         </Col>
       </Row>
+      <h2 className="h5 mt-4 mb-2">Session log</h2>
       <div className="card">
         <Table responsive striped hover className="mb-0">
+          <caption className="text-muted">
+            Focus minutes and distraction notes for each saved study session
+          </caption>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Focus Minutes</th>
-              <th>Tasks Completed</th>
-              <th>Main Distraction</th>
+              <th scope="col">Date</th>
+              <th scope="col">Focus Minutes</th>
+              <th scope="col">Tasks Completed</th>
+              <th scope="col">Main Distraction</th>
             </tr>
           </thead>
           <tbody>
